@@ -1,5 +1,7 @@
 package com.proyect.console;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.proyect.interPlayer.IPlayer;
 
 public class Console {
@@ -8,10 +10,17 @@ public class Console {
 
 	IPlayer player;
 
+	
+	
+	@Autowired
 	public Console(IPlayer player) {
 		this.player = player;
 	}
 	
+	
+	public Console() {
+		
+	}
 	
 	public void getConsoleTurnedOn() {
 		player.turnOnConsole();
@@ -23,5 +32,15 @@ public class Console {
 		consoleIsOn = false;
 
 	}
+	
+	// Getter method for the 'player' property
+    public IPlayer getPlayer() {
+        return player;
+    }
+
+    // Setter method for the 'player' property
+    public void setPlayer(IPlayer player) {
+        this.player = player;
+    }
 	
 }

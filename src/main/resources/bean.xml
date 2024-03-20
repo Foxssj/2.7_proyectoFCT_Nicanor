@@ -8,5 +8,12 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-
+	<bean id="local" class="com.proyect.player.PlayerLocal" />
+	<bean id="distance" class="com.proyect.player.PlayerDistance" />
+	<bean id="console_local" class="com.proyect.console.Console"> 
+		<property name="player" ref="local"/>
+	</bean>
+	<bean id="console_distance" class="com.proyect.console.Console"> 
+		<property name="player" ref="distance"/>
+	</bean>
 </beans>
